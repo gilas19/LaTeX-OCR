@@ -1,0 +1,20 @@
+name: ocr.env
+channels:
+  - defaults
+dependencies:
+  - python=3.9
+  - pandas
+  - numpy
+  - pytorch
+  - modulegraph
+  - macholib
+  - setuptools
+  - altgraph
+  - py2app
+  - pillow
+  - clipboard
+  - pip
+  - pip:
+    - pix2tex
+    - rumps
+
