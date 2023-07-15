@@ -1,4 +1,4 @@
-name: ocr.env
+name: pix2tex.env
 channels:
   - defaults
 dependencies:

@@ -1,8 +1,3 @@
-"""
-Usage:
-    python setup.py py2app -A
-"""
-
 from setuptools import setup
 import sys
 sys.setrecursionlimit(5000)
