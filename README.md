@@ -14,7 +14,7 @@ If you don't have PyTorch installed. Follow their instructions [here](https://py
 Install the package `pix2tex`: 
 
 ```
-pip install pix2tex[gui]
+pip install "pix2tex[gui]"
 ```
 
 Model checkpoints will be downloaded automatically.
@@ -24,13 +24,13 @@ There are three ways to get a prediction from an image.
 
 2. Thanks to [@katie-lim](https://github.com/katie-lim), you can use a nice user interface as a quick way to get the model prediction. Just call the GUI with `latexocr`. From here you can take a screenshot and the predicted latex code is rendered using [MathJax](https://www.mathjax.org/) and copied to your clipboard.
 
-    Under linux, it is possible to use the GUI with `gnome-screenshot` which comes with multiple monitor support if `gnome-screenshot` was installed beforehand.
+    Under linux, it is possible to use the GUI with `gnome-screenshot` (which comes with multiple monitor support) if `gnome-screenshot` was installed beforehand. For Wayland, `grim` and `slurp` will be used when they are both available. Note that `gnome-screenshot` is not compatible with wlroots-based Wayland compositors. Since `gnome-screenshot` will be preferred when available, you may have to set the environment variable `SCREENSHOT_TOOL` to `grim` in this case (other available values are `gnome-screenshot` and `pil`).
 
     ![demo](https://user-images.githubusercontent.com/55287601/117812740-77b7b780-b262-11eb-81f6-fc19766ae2ae.gif)
 
     If the model is unsure about the what's in the image it might output a different prediction every time you click "Retry". With the `temperature` parameter you can control this behavior (low temperature will produce the same result).
 
-3. You can use an API. This has additional dependencies. Install via `pip install -U pix2tex[api]` and run
+3. You can use an API. This has additional dependencies. Install via `pip install -U "pix2tex[api]"` and run
     ```bash
     python -m pix2tex.api.run
     ```
@@ -69,7 +69,7 @@ Visit here: https://pix2tex.readthedocs.io/
 
 ## Training the model [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lukas-blecher/LaTeX-OCR/blob/main/notebooks/LaTeX_OCR_training.ipynb)
 
-Install a couple of dependencies `pip install pix2tex[train]`.
+Install a couple of dependencies `pip install "pix2tex[train]"`.
 1. First we need to combine the images with their ground truth labels. I wrote a dataset class (which needs further improving) that saves the relative paths to the images with the LaTeX code they were rendered with. To generate the dataset pickle file run 
 
 ```
